@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calkcal.css">
+    <link rel="stylesheet" href="/CSS/jgpage.css">
+    <title>calKcal</title>
+</head>
+
+<body>
+    <ul id="navbar">
+        <li class="navline"><a href="/jgpage.html" class="navlink">Home</a></li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Games</a>
+                <ul class="dropdown" id="hidden_games">
+                    <li class="dropdown-game"><a href="/valorant.html" id="addMargin">Valorant</a></li>
+                    <li class="dropdown-game"><a href="">Warzone</a></li>
+                </ul>
+            </li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Projetos</a>
+            <ul class="dropdown" id="hidden_games">
+                <li class="dropdown-game"><a href="/BreakingBad/breakingbadindex.html" id="addMargin3">Breaking Bad</a></li>
+                <li class="dropdown-game"><a href="/ISS/index.html" id="addMargin2">ISS</a></li>
+                <li class="dropdown-game"><a href="/Kcal/calcKcal.html" id="addMargin">KCAL</a></li>
+                <li class="dropdown-game"><a href="/calculadora/calculadora.html">Calculadora</a></li>
+            </ul></li>
+        <li class="navline"><a href="" class="navlink">Linguagens</a></li>
+        <li class="navline"><a href="" class="navlink">Contato</a></li>
+    </ul>
+    <div id="container">
+        <fieldset>
+            <legend><img src="calories.png" alt=""></legend>
+            <h2>Metabolismo basal</h2>
+            <form action="" id="form">
+                <div class="labelBox">
+                    <label for="sexo" class="labelText">Sexo</label>
+                    <select name="sexo" class="labelInput" id="sexo" value="sexo">
+                        <option value="mulher">Mulher</option>
+                        <option value="homem">Homem</option>
+                    </select>
+                </div>
+                <div class="labelBox">
+                    <label for="idade"  class="labelText">Idade</label>
+                    <input type="number" class="labelInput" id='idade' value='idade'>
+                </div>
+                <div class="labelBox">
+                    <label for="peso"  class="labelText">Peso</label>
+                    <input type="number" class="labelInput" id='peso' value='peso'>
+                </div>
+                <div class="labelBox">
+                    <label for="altura"  class="labelText">Altura (cm)</label>
+                    <input type="number" class="labelInput" id='altura' value='alutra'>
+                </div>
+                <div class="labelBox">
+                    <label for="atv"  class="labelText">Nível de atividade</label>
+                    <select name="atv" class="labelInput" id='nivel_trabalho'>
+                        <option  value="1.2">Sedentário</option>
+                        <option  value="1.375">Atividade ligeira</option>
+                        <option  value="1.55">Atividade moderada</option>
+                        <option  value="1.725">Atividade intensa</option>
+                        <option  value="1.9">Atividade muito intensa</option>
+                    </select>
+                </div>
+                <button type="submit" id="calc">Calcular</button>
+            </form>
+        </fieldset>
+        <script src="calckcal.js"></script>
+    </div>
+</body>
+
+</html>

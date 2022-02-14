@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Open+Sans:wght@400;700&display=swap');
+
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#navbar {
+    text-align: center;
+    padding: 1em;
+    background-color: black;
+    list-style-type: none;
+}
+
+.navline {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-game a {
+    color: black;
+    padding: 0.5em;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-game a:hover{
+    background-color: #D2D2CF;
+}
+
+.dropdown {
+    margin-right: 3em;
+    position: absolute;
+    display: inline-block;
+}
+
+
+.dropdown-game {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 8em;
+    z-index: 1;
+    right: 1em;
+    top: 2em;
+}
+#addMargin{
+    margin-top: 2.5em;
+}
+#addMargin2{
+    margin-top: 5em;
+}
+#addMargin3{
+    margin-top: 7.5em;
+}
+#mouse_hover:hover .dropdown-game{
+    display: block;
+}
+.navlink {
+    padding: 1em;
+    margin: 2em;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.navlink:hover{
+    background-color: grey;
+}

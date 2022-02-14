@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <title>siteJG</title>
+</head>
+<body>
+    <div id="container">
+        <div id="container_intro">
+            <img src="/fotoJG.jpg" alt="Foto do João">
+            <h1 id="boasvindas">Bem-vindo ao site do João</h1>
+            <p>Aqui você me conhecerá melhor. Colocarei várias informações sobre mim, além de projetos que tenho feito.</p>
+        </div>
+        <div id="container_login">
+            <h1 id="login_h1">Login</h1>
+           
+           <form action="/login" method="post">
+                <label for="email">E-mail: </label><br>
+                <input type="email" name="email" id="email"><br>
+                <label for="password">Senha: </label><br>
+                <input type="password" name="password" id="password">
+                <button type="submit" id="submit-button">LOGIN</button>
+
+                <p id="cadastrese">Novo por aqui ? <a href="/cadastro.html" id="register_link">Cadastre-se</a></p>
+            </form>
+            
+        </div>
+    </div>
+    <script src="/client.js"></script>
+</body>
+</html>

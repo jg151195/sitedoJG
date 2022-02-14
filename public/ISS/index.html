@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <link rel="stylesheet" href="/CSS/jgpage.css">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <style>
+        h1{
+            text-align: center;
+            margin-top: 2em;
+        }
+        p{
+            text-align: center;
+        }
+        #issMap {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            width: 50%;
+            height: 300px;
+        }
+    </style>
+    <title>ISS</title>
+</head>
+
+
+<body>
+    <ul id="navbar">
+        <li class="navline"><a href="/jgpage.html" class="navlink">Home</a></li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Games</a>
+                <ul class="dropdown" id="hidden_games">
+                    <li class="dropdown-game"><a href="/valorant.html" id="addMargin">Valorant</a></li>
+                    <li class="dropdown-game"><a href="">Warzone</a></li>
+                </ul>
+            </li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Projetos</a>
+            <ul class="dropdown" id="hidden_games">
+                <li class="dropdown-game"><a href="/BreakingBad/breakingbadindex.html" id="addMargin3">Breaking Bad</a></li>
+                <li class="dropdown-game"><a href="/ISS/index.html" id="addMargin2">ISS</a></li>
+                <li class="dropdown-game"><a href="/Kcal/calcKcal.html" id="addMargin">KCAL</a></li>
+                <li class="dropdown-game"><a href="/calculadora/calculadora.html">Calculadora</a></li>
+            </ul></li>
+        <li class="navline"><a href="" class="navlink">Linguagens</a></li>
+        <li class="navline"><a href="" class="navlink">Contato</a></li>
+    </ul>
+    <h1>WHERE IS THE ISS ?</h1>
+    <p>Latitude: <span id="lat"></span>°</p>
+    <p>Longitutde: <span id="long"></span>°</p>
+    <div id="issMap"></div>
+    <script>
+        //making a map and titles
+        const myMap = L.map('issMap').setView([0, 0], 1);
+        const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+        const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
+        const tiles = L.tileLayer(tileUrl, {
+            attribution
+        });
+        tiles.addTo(myMap);
+        //making a marker with custom icon
+        const myIcon = L.icon({
+            iconUrl: 'issMap.png',
+            iconSize: [50, 32],
+            iconAnchor: [25, 16]
+        });
+        const marker = L.marker([0, 0], {
+            icon: myIcon
+        }).addTo(myMap);
+        const url_api = 'https://api.wheretheiss.at/v1/satellites/25544';
+        let firsTime = true;
+        async function getISS() {
+            const response = await fetch(url_api);
+            const data = await response.json();
+            const {
+                latitude,
+                longitude
+            } = data;
+            marker.setLatLng([latitude, longitude]);
+            if (firsTime) {
+                myMap.setView([latitude, longitude], 2);
+                firsTime = false;
+            }
+
+            document.getElementById('lat').textContent = latitude.toFixed(2);
+            document.getElementById('long').textContent = longitude.toFixed(2);
+        }
+        setInterval(getISS, 1000);
+    </script>
+</body>
+
+</html>

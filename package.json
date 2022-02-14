@@ -1,0 +1,22 @@
+{
+  "name": "sitedojg",
+  "version": "1.0.0",
+  "description": "Meu site com tudo que sei",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "jg151195"
+  },
+  "author": "João Gabriel",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-validator": "^6.14.0",
+    "nedb": "^1.8.0",
+    "node-fetch": "^2.6.7"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculadora.css">
+    <link rel="stylesheet" href="/CSS/jgpage.css">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <ul id="navbar">
+        <li class="navline"><a href="/jgpage.html" class="navlink">Home</a></li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Games</a>
+                <ul class="dropdown" id="hidden_games">
+                    <li class="dropdown-game"><a href="/valorant.html" id="addMargin">Valorant</a></li>
+                    <li class="dropdown-game"><a href="">Warzone</a></li>
+                </ul>
+            </li>
+        <li class="navline" id="mouse_hover"><a href="" class="navlink">Projetos</a>
+            <ul class="dropdown" id="hidden_games">
+                <li class="dropdown-game"><a href="" id="addMargin3">Breaking Bad</a></li>
+                <li class="dropdown-game"><a href="/ISS/index.html" id="addMargin2">ISS</a></li>
+                <li class="dropdown-game"><a href="/Kcal/calcKcal.html" id="addMargin">KCAL</a></li>
+                <li class="dropdown-game"><a href="/calculadora/calculadora.html">Calculadora</a></li>
+            </ul></li>
+        <li class="navline"><a href="" class="navlink">Linguagens</a></li>
+        <li class="navline"><a href="" class="navlink">Contato</a></li>
+    </ul>
+    <h1>Calculadora</h1>
+    <div id="cal_container">
+
+        <div id="parag">
+        <div id= "tela"></div>
+        </div>
+        <input type="button" value="C" id="clear" onclick="clean()"></input>
+        <input type="button" value="<<" id="erase" onclick="apaga()"></input> <br>
+        <input type="button" class="numero" onclick="showNumber('7')" value="7"></input>
+        <input type="button" class="numero" onclick="showNumber('8')" value="8"></input>
+        <input type="button" class="numero" onclick="showNumber('9')" value="9"></input>
+        <input type="button" class="numero" onclick="showNumber('-')" value="-"></input>
+        <input type="button" class="numero" onclick="showNumber('4')" value="4"></input>
+        <input type="button" class="numero" onclick="showNumber('5')" value="5"></input>
+        <input type="button" class="numero" onclick="showNumber('6')" value=" 6"></input>
+        <input type="button" class="numero" onclick="showNumber('/')" value="/"></input>
+        <input type="button" class="numero" onclick="showNumber('1')" value="1"></input>
+        <input type="button" class="numero" onclick="showNumber('2')" value="2"></input>
+        <input type="button" class="numero" onclick="showNumber('3')" value="3"></input>
+        <input type="button" class="numero" onclick="showNumber('*')" value="x"></input>
+        <input type="button" class="numero" value="=" id="igual" onclick="resultado()"></input>
+        <input type="button" class="numero" onclick="showNumber('.')" value="."></input>
+        <input type="button" class="numero" onclick="showNumber('0')" value="0"></input>
+        <input type="button" class="numero" onclick="showNumber('+')" value="+"></input>
+    </div>
+   
+    <script src="calculadora.js"></script>
+</body>
+
+</html>
