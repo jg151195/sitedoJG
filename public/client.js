@@ -16,12 +16,7 @@ function ValidateFormRegister() {
         container_login.appendChild(aproveMessage);
     }
 };
-
-window.ValidateLogin = async (req,resp) =>{
-    const response = await fetch ('/login');
-    const data = response.json();
-    console.log(data);
-    return false;
+return false;
 }
 
 
