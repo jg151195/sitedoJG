@@ -26,14 +26,14 @@ app.post('/cadastro', (req, resp) => {
 
 app.post('/login', (req, resp) => {
     const data = req.body;
-    console.log(data);
     db.find(data, (err,docs)=>{
         const isEmpty = Object.keys(docs).length === 0;
         if(isEmpty){
-            resp.send('Email ou senha invalidos');
+            
+            resp.send("<div align ='center'><h2>Invalid email or password</h2></div><br><br><div align ='center'><a href='./index.html'>Login Again</a></div>");
         }
         else{
-            resp.redirect('/jgpage.html');
+            resp.redirect('./jgpage.html');
         }
     })
 })

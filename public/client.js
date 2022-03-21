@@ -1,4 +1,4 @@
-function ValidateForm() {
+function ValidateFormRegister() {
     const password = document.getElementById('password').value;
     const password_confirme = document.getElementById('password-confirme').value;
     const container_login = document.getElementById('container_login');
@@ -17,6 +17,12 @@ function ValidateForm() {
     }
 };
 
+window.ValidateLogin = async (req,resp) =>{
+    const response = await fetch ('/login');
+    const data = response.json();
+    console.log(data);
+    return false;
+}
 
 
 async function getDataValorant() {
